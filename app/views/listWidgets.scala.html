@@ -3,8 +3,8 @@
   @main("Get a token", obpApiHostname) {
 
     @* Global errors are not tied to any particular form field *@
-    @if(form.hasGlobalErrors) {
-      @form.globalErrors.map { error: FormError =>
+    @if(form.hasErrors) {
+      @form.errors.map { error: FormError =>
         <div>
           @error.key: @error.message
         </div>
