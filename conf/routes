@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.WidgetController.index
+GET     /                           controllers.WidgetController.listWidgets
 
 # Widgets
 GET     /token                    controllers.WidgetController.listWidgets

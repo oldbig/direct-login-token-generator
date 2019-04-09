@@ -40,7 +40,7 @@ class WidgetController @Inject()(cc: MessagesControllerComponents, actorSystem: 
 
   def listWidgets = Action { implicit request: MessagesRequest[AnyContent] =>
     // Pass an unpopulated form to the template
-    Ok(views.html.listWidgets(form, postUrl))
+    Ok(views.html.listWidgets(form, postUrl, obpApiHostname))
   }
 
   // This will be the action that handles our form post
@@ -49,7 +49,7 @@ class WidgetController @Inject()(cc: MessagesControllerComponents, actorSystem: 
       // This is the bad case, where the form had validation errors.
       // Let's show the user the form again, with the errors highlighted.
       // Note how we pass the form with errors to the template.
-      BadRequest(views.html.listWidgets(formWithErrors, postUrl))
+      BadRequest(views.html.listWidgets(formWithErrors, postUrl, obpApiHostname))
     }
 
     val successFunction = { data: Data =>
