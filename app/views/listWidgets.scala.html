@@ -1,6 +1,6 @@
-@(form: Form[WidgetForm.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
+@(form: Form[WidgetForm.Data], postUrl: Call, obpApiHostname: String)(implicit request: MessagesRequestHeader)
 
-  @main("Get a token") {
+  @main("Get a token", obpApiHostname) {
 
     @* Global errors are not tied to any particular form field *@
     @if(form.hasGlobalErrors) {
